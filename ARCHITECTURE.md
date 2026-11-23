@@ -10,11 +10,11 @@
 
 | Role | Full Name | Student ID | Braude Academic Email |
 | :--- | :--- | :--- | :--- |
-| **Student A (Role A)** | `Shahar Reichman` | `` | `[Shahar.Reichman@e.braude.ac.il]` |
-| **Student B (Role B)** | `Amir Kosover` | `` | `[Amir.Kosover@e.braude.ac.il]` |
+| **Student A (Role A)** | `Shahar Reichman` | `הזן_תז_שחר` | `Shahar.Reichman@e.braude.ac.il` |
+| **Student B (Role B)** | `Amir Kosover` | `הזן_תז_אמיר` | `Amir.Kosover@e.braude.ac.il` |
 
-* **Group Number:** `G[XX]`
-* **GitHub Repository URL:** `https://github.com/[AmirKosover]/Ex4_SmartParking_Design`
+* **Group Number:** `GXX`
+* **GitHub Repository URL:** `https://github.com/AmirKosover/Ex4_SmartParking_Design1`
 
 ---
 
@@ -62,23 +62,7 @@ Following the **ECB (Entity-Control-Boundary)** architectural pattern:
 ## 5. Independent AI Prompt & Architectural Design Critique (Part 4)
 
 ```text
-[Paste your team's verbatim English Design Review prompt from Part 4 here]
-```
-
-* **Improvement 1 Applied (Race Condition):** Added `version: int` and `tryReserve(expectedVersion: int): boolean` on `ParkingSpot` (and nested `alt acquired == true/false` in Sequence Diagram 1) to prevent simultaneous double-booking.
-* **Improvement 2 Applied (EV Physical Occupancy):** Separated `isPluggedIn` from `isPhysicallyOccupied` on `ChargingSession` so unplugging the cable at minute 29 without moving the car still triggers the 30-minute Charger Idle Penalty.
-
----
-
-## 6. License
-Distributed under the **ORT Braude College Academic License** (61756 Software Engineering Methods, 2026-2027).
-
 Audit our attached ECB Class Diagram (class_diagram_ecb.puml) and Reservation Sequence Diagram (sequence_reservation_ecb.puml) against the edge cases defined in Section 3 of SYSTEM_STORY.md:
 1. Simultaneous Double-Booking Race Condition: Verify how two students attempting to reserve the last available spot in Student Zone at the exact same millisecond are serialized so only one reservation succeeds.
 2. Physical Bay Occupancy vs. Electrical Cable Disconnection: Verify that if an EV driver unplugs the charging cable at minute 29 without physically vacating the EV bay, the 30-minute Charger Idle Penalty (5 NIS/hr) is still triggered.
-   Identify any missing attributes, methods, or alternative branches needed to enforce strict consistency across both diagrams.
-
-Audit our attached ECB Class Diagram (class_diagram_ecb.puml) and Reservation Sequence Diagram (sequence_reservation_ecb.puml) against the edge cases defined in Section 3 of SYSTEM_STORY.md:
-1. Simultaneous Double-Booking Race Condition: Verify how two students attempting to reserve the last available spot in Student Zone at the exact same millisecond are serialized so only one reservation succeeds.
-2. Physical Bay Occupancy vs. Electrical Cable Disconnection: Verify that if an EV driver unplugs the charging cable at minute 29 without physically vacating the EV bay, the 30-minute Charger Idle Penalty (5 NIS/hr) is still triggered.
-   Identify any missing attributes, methods, or alternative branches needed to enforce strict consistency across both diagrams.
+Identify any missing attributes, methods, or alternative branches needed to enforce strict consistency across both diagrams.
